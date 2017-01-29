@@ -1,0 +1,27 @@
+{
+  "name": "swiftbot",
+  "version": "1.0.0",
+  "description": "SwiftBot is the best discord bot ever created",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AblakSoft/SwiftBot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Marsu5",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AblakSoft/SwiftBot/issues"
+  },
+  "homepage": "https://github.com/AblakSoft/SwiftBot#readme"
+}
