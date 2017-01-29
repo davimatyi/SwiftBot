@@ -1,1 +1,1 @@
-exports.token = "addbottoke";
+exports.token = "addbottoken";
