@@ -1,4 +1,5 @@
 node_modules
 .vscode/settings.json
 ./utils/API.js
+utils/API.\js
 utils/API\.js
