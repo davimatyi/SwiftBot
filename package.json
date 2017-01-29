@@ -2,13 +2,14 @@
   "name": "swiftbot",
   "version": "1.0.0",
   "description": "SwiftBot is the best discord bot ever created",
-  "main": "index.js",
+  "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.0.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
