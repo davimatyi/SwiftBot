@@ -5,7 +5,7 @@ var client = new Discord.Client();
 
 client.on("message", msg => {
     if (msg.content.startsWith("ping")) {
-        msg.channel.sendMessage("pong!");
+        msg.channel.sendMessage("pong!",{tts: true});
     }
 });
 
