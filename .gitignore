@@ -1,5 +1,14 @@
+#node stuff
 node_modules
+npm-debug.log
+
+#Ranom things
 .vscode/settings.json
 ./utils/API.js
 utils/API.\js
 utils/API\.js
+
+#OS files
+._DS_Store
+._._DS_Store
+Thumbs.db

@@ -4,7 +4,8 @@
   "description": "SwiftBot is the best discord bot ever created",
   "main": "bot.js",
   "dependencies": {
-    "discord.js": "^11.0.0"
+    "discord.js": "^11.0.0",
+    "request": "^2.79.0"
   },
   "devDependencies": {},
   "scripts": {
