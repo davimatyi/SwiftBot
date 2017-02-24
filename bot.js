@@ -5,6 +5,7 @@ const cat = require("./handlers/cat.js");
 const chuck = require("./handlers/chuck.js");
 const config = require("./config.json");
 //const swift = require("./handelers/swift.js");
+const utils = require("./utils/Utils.js");
 
 
 client.on("message", msg => {
@@ -12,13 +13,18 @@ client.on("message", msg => {
     if(msg.author.bot) return;
     // Removes prefix
     let prefixLess = msg.content.substring(config.prefix.length);
-
     // Fun commands
     if(prefixLess === "cat") cat.sendRandomCat(msg);
     if(prefixLess.startsWith("ping")) msg.channel.sendMessage("pong!",{tts: true});
     if(prefixLess === "chuck") chuck.sendRandomChuck(msg);
     if(prefixLess.startsWith("suck")) msg.channel.sendMessage(prefixLess.substring(5)+" sucks!",{tts: true});
     //if(prefixLess.startsWith("swift")) swift.play(msg);
+    if(msg.author.id === "174786282793205760"){
+        if(prefixLess === "dChannels"){
+            utils.findAuthorVoiceChannel(msg).join();
+        }
+        
+    }
 });
 
 // Commands with different prefixes
@@ -35,7 +41,8 @@ client.on("message", msg => {
 client.on("ready", () => {
     console.log("I have succsessfuly logged in as: " + client.user.username);
     client.user.setGame("Shake It OFF");
-    client.user.setAFK(true);
 });
 
 client.login(api.token);
+
+
