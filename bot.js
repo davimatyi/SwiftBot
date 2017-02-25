@@ -21,9 +21,20 @@ client.on("message", msg => {
     //if(prefixLess.startsWith("swift")) swift.play(msg);
     if(msg.author.id === "174786282793205760"){
         if(prefixLess === "dChannels"){
-            utils.findAuthorVoiceChannel(msg).join();
+            utils.findAuthorVoiceChannel(msg).join()
+            .then(connection => {
+                const dispatcher = connection.playFile("./audio/test.mp3");
+                dispatcher.on('error', err => {
+                    console.log(err);
+                });
+                dispatcher.on('end', reason => {
+                    console.log(reason);
+                    msg.member.voiceChannel.leave();
+                });
+                console.log(true);
+            });
         }
-        
+
     }
 });
 
@@ -44,5 +55,3 @@ client.on("ready", () => {
 });
 
 client.login(api.token);
-
-
