@@ -4,13 +4,13 @@ const client = new Discord.Client();
 const cat = require("./handlers/cat.js");
 const chuck = require("./handlers/chuck.js");
 const config = require("./config.json");
-//const swift = require("./handelers/swift.js");
-const utils = require("./utils/Utils.js");
+const swift = require("./handlers/swift.js");
 
 
 client.on("message", msg => {
     if(!msg.content.startsWith(config.prefix) && msg.toString().length > 1) return;
     if(msg.author.bot) return;
+    if(msg.channel.type === "dm") return;
     // Removes prefix
     let prefixLess = msg.content.substring(config.prefix.length);
     // Fun commands
@@ -18,23 +18,9 @@ client.on("message", msg => {
     if(prefixLess.startsWith("ping")) msg.channel.sendMessage("pong!",{tts: true});
     if(prefixLess === "chuck") chuck.sendRandomChuck(msg);
     if(prefixLess.startsWith("suck")) msg.channel.sendMessage(prefixLess.substring(5)+" sucks!",{tts: true});
-    //if(prefixLess.startsWith("swift")) swift.play(msg);
+    if(prefixLess.startsWith("swift")) swift.play(msg);
     if(msg.author.id === "174786282793205760"){
-        if(prefixLess === "dChannels"){
-            utils.findAuthorVoiceChannel(msg).join()
-            .then(connection => {
-                const dispatcher = connection.playFile("./audio/test.mp3");
-                dispatcher.on('error', err => {
-                    console.log(err);
-                });
-                dispatcher.on('end', reason => {
-                    console.log(reason);
-                    msg.member.voiceChannel.leave();
-                });
-                console.log(true);
-            });
-        }
-
+        //
     }
 });
 
