@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const api = require("./utils/API.js");
 const client = new Discord.Client();
 const cat = require("./handlers/cat.js");
 const chuck = require("./handlers/chuck.js");
@@ -40,4 +39,4 @@ client.on("ready", () => {
     client.user.setGame("Shake It OFF");
 });
 
-client.login(api.token);
+client.login(config.token);
