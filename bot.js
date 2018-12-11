@@ -36,7 +36,7 @@ client.on("message", msg => {
 
 client.on("ready", () => {
     console.log("I have succsessfuly logged in as: " + client.user.username);
-    client.user.setGame("Shake It OFF");
+    client.user.setActivity("Shake It Off", {url: "https://open.spotify.com/track/0cqRj7pUJDkTCEsJkx8snD?si=LfYE_osiT7K8_7HI0yYj3A",type: "LISTENING"});
 });
 
 client.login(config.token);
