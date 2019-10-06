@@ -19,7 +19,7 @@ client.on("message", msg => {
     if(prefixLess.startsWith("suck")) msg.channel.sendMessage(prefixLess.substring(5)+" sucks!",{tts: true});
     if(prefixLess.startsWith("swift")) swift.play(msg);
     if(msg.author.id === "174786282793205760"){
-        //
+        msg.channel.sendMessage("megöllek", {tts: true});
     }
 });
 
